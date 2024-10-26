@@ -1,0 +1,23 @@
+<!-- mous/templates/mous/upload_mou.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload MoU</title>
+</head>
+<body>
+    <h1>Upload a New Memorandum of Understanding (MoU)</h1>
+
+    <form method="post" action=".">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload MoU</button>
+    </form>
+
+    <!-- Button to go back to MoU List -->
+    <div>
+        <a href="{% url 'mou_list' %}">
+            <button style="padding: 10px 20px; font-size: 16px; margin-top: 10px;">Back to MoU List</button>
+        </a>
+    </div>
+</body>
+</html>
