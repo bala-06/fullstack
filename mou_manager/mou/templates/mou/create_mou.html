@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create MOU</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .form-section {
+            margin-bottom: 2rem;
+        }
+        .form-section h5 {
+            color: #007bff;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #007bff;
+            display: inline-block;
+            padding-bottom: 0.25rem;
+        }
+        .form-control,
+        .form-check-input {
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center text-primary mb-4">Create New MOU</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <div class="row">
+                <!-- Column 1 -->
+                <div class="col-md-4">
+                    <div class="form-section">
+                        <h5>MOU Details</h5>
+                        <div class="mb-3">
+                            <label for="id_title" class="form-label">Title</label>
+                            {{ form.title }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_organization_name" class="form-label">Organization Name</label>
+                            {{ form.organization_name }}
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="id_department" class="form-label">Department</label>
+                            {{ form.department }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_start_date" class="form-label">Start Date</label>
+                            {{ form.start_date }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_end_date" class="form-label">End Date</label>
+                            {{ form.end_date }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_document" class="form-label">Document (Optional)</label>
+                            {{ form.document }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_status" class="form-label">Status</label>
+                            {{ form.status }}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="col-md-4">
+                    <div class="form-section">
+                        <h5>MOU Coordinator</h5>
+                        <div class="mb-3">
+                            <label for="id_mou_coordinator_name" class="form-label">Name</label>
+                            {{ form.mou_coordinator_name }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_mou_coordinator_mobile" class="form-label">Mobile</label>
+                            {{ form.mou_coordinator_mobile }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_mou_coordinator_email" class="form-label">Email</label>
+                            {{ form.mou_coordinator_email }}
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <h5>Staff Coordinator</h5>
+                        <div class="mb-3">
+                            <label for="id_staff_coordinator_name" class="form-label">Name</label>
+                            {{ form.staff_coordinator_name }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_staff_coordinator_mobile" class="form-label">Mobile</label>
+                            {{ form.staff_coordinator_mobile }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_staff_coordinator_email" class="form-label">Email</label>
+                            {{ form.staff_coordinator_email }}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="col-md-4">
+                    <div class="form-section">
+                        <h5>Outcomes</h5>
+                        <div class="mb-3">
+                            <label for="id_outcome" class="form-label">Select Outcomes</label>
+                            {{ form.outcome }}
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <h5>Payment</h5>
+                        <div class="mb-3">
+                            <label for="id_payment_paid" class="form-label">Amount (₹)</label>
+                            {{ form.payment_paid }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-success btn-lg">Save MOU</button>
+                <a href="{% url 'mou_list' %}" class="btn btn-secondary btn-lg">Cancel</a>
+            </div>
+        </form>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
