@@ -1,8 +1,0 @@
-<!-- mous/templates/mous/confirm_delete.html -->
-<h1>Delete MoU</h1>
-<p>Are you sure you want to delete "{{ mou.title }}"?</p>
-<form method="post">
-    {% csrf_token %}
-    <button type="submit">Yes, delete</button>
-    <a href="{% url 'filter_results' %}">Cancel</a>
-</form>

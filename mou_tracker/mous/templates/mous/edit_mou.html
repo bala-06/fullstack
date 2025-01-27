@@ -1,7 +1,0 @@
-<!-- mous/templates/mous/edit_mou.html -->
-<h1>Edit MoU</h1>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save Changes</button>
-</form>
